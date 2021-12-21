@@ -53,6 +53,7 @@ const configureApp = async () => {
 
 };
 
+
 const bootApp = async () => {
   await createDB();
   await syncDatabase();
