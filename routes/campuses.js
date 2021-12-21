@@ -17,7 +17,7 @@ router.get('/:id', ash(async(req, res) => {
   res.status(200).json(campus);
 }));
 
-// Delete campus
+// Deleting campus
 router.delete('/:id', ash(async(req, res) => {
   await Campus.destroy({
     where: {
@@ -27,13 +27,14 @@ router.delete('/:id', ash(async(req, res) => {
   res.status(200).json("Deleted a campus!");
 }));
 
-// Add new campus
+
+// Adding a new campus
 router.post('/', ash(async(req, res) => {
   let newCampus = await Campus.create(req.body);
   res.status(200).json(newCampus);
 }));
 
-// Edit Campus
+// Editing Campus
 router.put('/:id', ash(async(req, res) => {
   await Campus.update(req.body, {
     where: {
@@ -44,5 +45,6 @@ router.put('/:id', ash(async(req, res) => {
   res.status(201).json(campus);
 }))
 
-// Export our router, so that it can be imported to construct our apiRouter;
+// Exportation of router
+//Allows for the construction of apiRouter 
 module.exports = router;
